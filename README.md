@@ -56,7 +56,7 @@ npm install
 npm run setup
 ```
 
-4 (alternative). Create a `.env.development` and `.env.production` files following the format of `.env.example` in the root directory.
+4. (alternative) Create a `.env.development` and `.env.production` files following the format of `.env.example` in the root directory.
 Fill in the API keys here.
 ```
 CONTENTFUL_SPACE_ID=''
