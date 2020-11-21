@@ -12,6 +12,7 @@
   - [Core Tech Stack](#core-tech-stack)
   - [Prerequisites](#prerequisites)
   - [Setup](#setup)
+  - [Useful Commands](#useful)
   - [License](#license)
 
 <a name="overview"/></a>
@@ -35,11 +36,47 @@ This repository is for the development of Lockheed Martin Leadership Institute's
 
 <a name="setup"/></a>
 ## Setup
-1. `git clone git@github.com:LMLI-Cohort-9/Envision-2040.git`
-2. `cd Envision-2040/`
-3. `npm install`
-4. `nmp run setup`
-5. `npm run dev`
+1. Clone the repository.
+```
+git clone git@github.com:LMLI-Cohort-9/Envision-2040.git
+```
+
+2. Check into the cloned repository.
+```
+cd Envision-2040/
+```
+
+3. Install dependencies.
+```
+npm install
+```
+
+4. Setup Contentful API keys.
+```
+npm run setup
+```
+
+4 (alternative). Create a `.env.development` and `.env.production` files following the format of `.env.example` in the root directory.
+Fill in the API keys here.
+```
+CONTENTFUL_SPACE_ID=''
+CONTENTFUL_ACCESS_TOKEN=''
+```
+
+5. Run in development mode.
+```
+npm run dev
+```
+
+<a name="useful"/></a>
+## Useful Commands
+```
+npm run build
+```
+Builds the app for production to the build folder.
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.
 
 <a name="license"/></a>
 ## License
