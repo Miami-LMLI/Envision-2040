@@ -3,10 +3,7 @@ import PropTypes from "prop-types"
 import { StaticQuery, graphql } from 'gatsby'
 import './navigation.module.css'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faInfoCircle, faSitemap, faAddressBook } from "@fortawesome/free-solid-svg-icons";
-
-import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import { Navbar, Nav } from 'react-bootstrap';
 
 class Navigation extends React.Component {
   render() {
@@ -14,21 +11,20 @@ class Navigation extends React.Component {
 
     return (
       <Navbar collapseOnSelect expand="lg" bg="transparent " variant="light">
-        <Navbar.Brand href="/">Envision 2040</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
-            <NavDropdown title={<><FontAwesomeIcon icon={faSitemap} /> Categories</>} id="collasible-nav-dropdown">
-              <NavDropdown.Item href="/categories">Categories</NavDropdown.Item>
-              <NavDropdown.Divider />
-              {data.allContentfulCategory.edges.map(({ node }) => {
+            <Nav.Link href="/">About</Nav.Link>
+          </Nav>
+          <Nav className="mx-auto">
+            {data.allContentfulCategory.edges.map(({ node }) => {
                 return (
-                  <NavDropdown.Item href={`/${node.slug}`}>{node.title}</NavDropdown.Item>
+                  <Nav.Link href={`/${node.slug}`}>{node.title}</Nav.Link>
                 )
               })}
-            </NavDropdown>
-            <Nav.Link href="/about"><FontAwesomeIcon icon={faInfoCircle} /> About</Nav.Link>
-            <Nav.Link href="/contact"><FontAwesomeIcon icon={faAddressBook} /> Contact Us</Nav.Link>
+          </Nav>
+          <Nav className="ml-auto">
+          <Nav.Link href="/contact">Contact</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
