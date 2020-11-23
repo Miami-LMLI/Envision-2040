@@ -8,12 +8,15 @@
   text-decoration: none;
 }
 
-.navigationItem {
+.icon {
   display: inline-flex;
   align-items: center;
+  transition: all 200ms ease;
   margin: 0 1em;
 }
 
-.navigationItem a {
-  color: currentColor;
+.icon:hover,
+.icon:active {
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
 }

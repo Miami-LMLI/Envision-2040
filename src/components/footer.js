@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from 'gatsby';
 
-import styles from './navigation.module.css'
+import styles from './footer.module.css'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook, faTwitter, faInstagram, faYoutube, faLinkedin } from "@fortawesome/free-brands-svg-icons";
