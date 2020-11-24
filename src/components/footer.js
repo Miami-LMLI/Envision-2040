@@ -49,7 +49,7 @@ class Footer extends React.Component {
               <FontAwesomeIcon icon={faLinkedin} /></a>
           </li>
           <li className={styles.icon}>
-            <a aria-label="Website"
+            <a aria-label="Lockheed Martin Leadership Institute"
               href={data.site.siteMetadata.social.website}>
               <FontAwesomeIcon icon={faGlobe} /></a>
           </li>
