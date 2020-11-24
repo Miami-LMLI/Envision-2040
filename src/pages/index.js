@@ -9,7 +9,7 @@ import Layout from '../components/layout';
 class RootIndex extends React.Component {
   /**
    * [Insert comment here]
-   * @return {*}
+   * @return {*} [Insert comment here]
    */
   render() {
     const headerImg = require('../../static/header.png');
