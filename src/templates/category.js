@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import {graphql} from 'gatsby';
 import get from 'lodash/get';
-// import Img from 'gatsby-image';
 import Layout from '../components/layout';
 import ModulePreview from '../components/module-preview';
 
@@ -23,16 +22,8 @@ class CategoryTemplate extends React.Component {
     return (
       <Layout location={this.props.location}>
         <div style={{background: '#fff'}}>
-          {/* <div>
-            <Img
-              className={styles.heroImage}
-              alt={category.title}
-              fluid={category.heroImage.fluid}
-            />
-          </div> */}
           <h1 className={styles.heroGradient}>{category.title}</h1>
           <div className="wrapper">
-            {/* <h1 className="section-headline">{category.title}</h1> */}
             <div
               dangerouslySetInnerHTML={{
                 __html: category.body.childMarkdownRemark.html,
@@ -65,11 +56,6 @@ export const pageQuery = graphql`
     contentfulCategory(slug: { eq: $slug }) {
       id
       title
-      heroImage {
-        fluid(maxWidth: 1180, background: "rgb:000000") {
-          ...GatsbyContentfulFluid_tracedSVG
-        }
-      }
       body {
         childMarkdownRemark {
           html
@@ -82,7 +68,7 @@ export const pageQuery = graphql`
           title
           slug
           heroImage {
-            fluid(maxHeight: 700, maxWidth: 1050, resizingBehavior: SCALE) {
+            fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
               ...GatsbyContentfulFluid_tracedSVG
             }
           }
