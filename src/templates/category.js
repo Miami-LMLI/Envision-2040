@@ -2,11 +2,11 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import {graphql} from 'gatsby';
 import get from 'lodash/get';
-import Img from 'gatsby-image';
+// import Img from 'gatsby-image';
 import Layout from '../components/layout';
 import ModulePreview from '../components/module-preview';
 
-import heroStyles from '../components/hero.module.css';
+import styles from '../components/hero.module.css';
 
 /**
  * [Insert comment here].
@@ -23,21 +23,22 @@ class CategoryTemplate extends React.Component {
     return (
       <Layout location={this.props.location}>
         <div style={{background: '#fff'}}>
-          <div>
+          {/* <div>
             <Img
-              className={heroStyles.heroImage}
+              className={styles.heroImage}
               alt={category.title}
               fluid={category.heroImage.fluid}
             />
-          </div>
+          </div> */}
+          <h1 className={styles.heroGradient}>{category.title}</h1>
           <div className="wrapper">
-            <h1 className="section-headline">{category.title}</h1>
+            {/* <h1 className="section-headline">{category.title}</h1> */}
             <div
               dangerouslySetInnerHTML={{
                 __html: category.body.childMarkdownRemark.html,
               }}
             />
-            <ul className="article-list">
+            <ul className="list">
               {modules.map(({node}) => {
                 return (
                   <li key={node.slug}>
@@ -75,13 +76,13 @@ export const pageQuery = graphql`
         }
       }
     }
-    allContentfulModule(filter: { category: {slug: {eq: $slug}}}) {
-      edges {
+    allContentfulModule(filter: {category: {slug: {eq: $slug}}}, sort: {fields: title}) {
+    edges {
         node {
           title
           slug
           heroImage {
-            fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
+            fluid(maxHeight: 700, maxWidth: 1050, resizingBehavior: SCALE) {
               ...GatsbyContentfulFluid_tracedSVG
             }
           }

@@ -5,7 +5,7 @@ import get from 'lodash/get';
 import Img from 'gatsby-image';
 import Layout from '../components/layout';
 
-import heroStyles from '../components/hero.module.css';
+import styles from '../components/hero.module.css';
 
 /**
  * [Insert comment here].
@@ -16,23 +16,21 @@ class ModuleTemplate extends React.Component {
    * @return {*} [Insert comment here].
    */
   render() {
-    const post = get(this.props, 'data.contentfulModule');
+    const module = get(this.props, 'data.contentfulModule');
 
     return (
       <Layout location={this.props.location}>
         <div style={{background: '#fff'}}>
-          <div className={heroStyles.hero}>
-            <Img
-              className={heroStyles.heroImage}
-              alt={post.title}
-              fluid={post.heroImage.fluid}
+          <Img
+              className={styles.heroImage}
+              alt={module.title}
+              fluid={module.heroImage.fluid}
             />
-          </div>
           <div className="wrapper">
-            <h1 className="section-headline">{post.title}</h1>
+            <h1 className="section-headline">{module.category.title} - {module.title}</h1>
             <div
               dangerouslySetInnerHTML={{
-                __html: post.body.childMarkdownRemark.html,
+                __html: module.body.childMarkdownRemark.html,
               }}
             />
           </div>
@@ -52,6 +50,9 @@ export const pageQuery = graphql`
   query ModuleBySlug($slug: String!) {
     contentfulModule(slug: { eq: $slug }) {
       title
+      category {
+        title
+      }
       heroImage {
         fluid(maxWidth: 1180, background: "rgb:000000") {
           ...GatsbyContentfulFluid_tracedSVG
