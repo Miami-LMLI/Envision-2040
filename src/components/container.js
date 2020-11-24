@@ -1,5 +1,12 @@
-import React from 'react'
+import PropTypes from 'prop-types';
+import React from 'react';
 
-export default ({ children }) => (
-  <div style={{ maxWidth: 1180, margin: '0 auto' }}>{children}</div>
-)
+const Container = ({children}) => (
+  <div style={{maxWidth: 1180, margin: '0 auto'}}>{children}</div>
+);
+
+Container.propTypes = {
+  children: PropTypes.any,
+};
+
+export default Container;

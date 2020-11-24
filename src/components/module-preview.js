@@ -1,10 +1,11 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import Img from 'gatsby-image'
+import PropTypes from 'prop-types';
+import React from 'react';
+import {Link} from 'gatsby';
+import Img from 'gatsby-image';
 
-import styles from './module-preview.module.css'
+import styles from './module-preview.module.css';
 
-export default ({ module }) => (
+const ModulePreview = ({module}) => (
   <div className={styles.preview}>
     <Img alt="" fluid={module.heroImage.fluid} />
     <h3 className={styles.previewTitle}>
@@ -16,4 +17,20 @@ export default ({ module }) => (
       }}
     />
   </div>
-)
+);
+
+ModulePreview.propTypes = {
+  module: PropTypes.shape({
+    category: PropTypes.shape({
+      slug: PropTypes.any,
+    }),
+    description: PropTypes.any,
+    heroImage: PropTypes.shape({
+      fluid: PropTypes.any,
+    }),
+    slug: PropTypes.any,
+    title: PropTypes.any,
+  }),
+};
+
+export default ModulePreview;

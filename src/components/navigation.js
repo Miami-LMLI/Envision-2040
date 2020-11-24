@@ -1,13 +1,20 @@
-import React from 'react'
-import PropTypes from "prop-types"
-import { StaticQuery, graphql } from 'gatsby'
-import './navigation.module.css'
+import React from 'react';
+import PropTypes from 'prop-types';
+import {StaticQuery, graphql} from 'gatsby';
+import './navigation.module.css';
 
-import { Navbar, Nav } from 'react-bootstrap';
+import {Navbar, Nav} from 'react-bootstrap';
 
+/**
+ * [Insert comment here]
+ */
 class Navigation extends React.Component {
+  /**
+   * [Insert comment here]
+   * @return {*}
+   */
   render() {
-    const { data } = this.props
+    const {data} = this.props;
 
     return (
       <Navbar collapseOnSelect expand="lg" bg="transparent " variant="light">
@@ -17,21 +24,28 @@ class Navigation extends React.Component {
             <Nav.Link href="/">About</Nav.Link>
           </Nav>
           <Nav className="mx-auto">
-            {data.allContentfulCategory.edges.map(({ node }) => {
-                return (
-                  <Nav.Link href={`/${node.slug}`}>{node.title}</Nav.Link>
-                )
-              })}
+            {data.allContentfulCategory.edges.map(({node}) => {
+              return (
+                <Nav.Link key={node.slug} href={`/${node.slug}`}>
+                  {node.title}
+                </Nav.Link>
+              );
+            })}
           </Nav>
           <Nav className="ml-auto">
-          <Nav.Link href="/contact">Contact</Nav.Link>
+            <Nav.Link href="/contact">Contact</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-    )
+    );
   }
 }
 
+/**
+ * [Insert comment here]
+ * @param {*} props
+ * @return {*}
+ */
 export default function MyNavigation(props) {
   return (
     <StaticQuery
@@ -47,20 +61,17 @@ export default function MyNavigation(props) {
           }
         }
       `}
-      render={data => <Navigation data={data} {...props} />}
+      render={(data) => <Navigation data={data} {...props} />}
     />
-  )
+  );
 }
 
 Navigation.propTypes = {
   data: PropTypes.shape({
     allContentfulCategory: PropTypes.shape({
       edges: PropTypes.shape({
-        node: PropTypes.shape({
-          title: PropTypes.string.isRequired,
-          slug: PropTypes.string.isRequired
-        }).isRequired
-      }).isRequired,
-    }).isRequired,
-  }).isRequired,
-}
+        map: PropTypes.func,
+      }),
+    }),
+  }),
+};
