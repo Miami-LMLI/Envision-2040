@@ -10,11 +10,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './base.css';
 
 /**
- * [Insert comment here]
+ * [Insert comment here].
  */
 class Layout extends React.Component {
   /**
-   * [Insert comment here]
+   * [Insert comment here].
    * @return {*}
    */
   render() {
@@ -37,9 +37,9 @@ class Layout extends React.Component {
 }
 
 /**
- * [Insert comment here]
- * @param {*} props
- * @return {*}
+ * [Insert comment here].
+ * @param {*} props [Insert comment here].
+ * @return {*} [Insert comment here].
  */
 export default function MyLayout(props) {
   return (

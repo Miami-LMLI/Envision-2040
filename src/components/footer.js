@@ -10,10 +10,11 @@ import {faFacebook, faTwitter, faInstagram, faYoutube, faLinkedin}
 import {faGlobe} from '@fortawesome/free-solid-svg-icons';
 
 /**
- *
+ * [Insert comment here].
  */
 class Footer extends React.Component {
   /**
+   * [Insert comment here].
    * @return {*}
    */
   render() {
@@ -59,9 +60,9 @@ class Footer extends React.Component {
 }
 
 /**
- * [Insert comment here]
- * @param {*} props
- * @return {*}
+ * [Insert comment here].
+ * @param {*} props [Insert comment here].
+ * @return {*} [Insert comment here].
  */
 export default function MyFooter(props) {
   return (
