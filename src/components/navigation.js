@@ -6,12 +6,12 @@ import './navigation.module.css';
 import {Navbar, Nav} from 'react-bootstrap';
 
 /**
- * [Insert comment here]
+ * [Insert comment here].
  */
 class Navigation extends React.Component {
   /**
-   * [Insert comment here]
-   * @return {*}
+   * [Insert comment here].
+   * @return {*} [Insert comment here].
    */
   render() {
     const {data} = this.props;
@@ -43,8 +43,8 @@ class Navigation extends React.Component {
 
 /**
  * [Insert comment here]
- * @param {*} props
- * @return {*}
+ * @param {*} props [Insert comment here].
+ * @return {*} [Insert comment here].
  */
 export default function MyNavigation(props) {
   return (

@@ -1,18 +1,26 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import get from 'lodash/get'
-import Img from 'gatsby-image'
-import Layout from '../components/layout'
+import PropTypes from 'prop-types';
+import React from 'react';
+import {graphql} from 'gatsby';
+import get from 'lodash/get';
+import Img from 'gatsby-image';
+import Layout from '../components/layout';
 
-import heroStyles from '../components/hero.module.css'
+import heroStyles from '../components/hero.module.css';
 
-class BlogPostTemplate extends React.Component {
+/**
+ * [Insert comment here].
+ */
+class ModuleTemplate extends React.Component {
+  /**
+   * [Insert comment here].
+   * @return {*} [Insert comment here].
+   */
   render() {
-    const post = get(this.props, 'data.contentfulModule')
+    const post = get(this.props, 'data.contentfulModule');
 
     return (
       <Layout location={this.props.location}>
-        <div style={{ background: '#fff' }}>
+        <div style={{background: '#fff'}}>
           <div className={heroStyles.hero}>
             <Img
               className={heroStyles.heroImage}
@@ -30,11 +38,15 @@ class BlogPostTemplate extends React.Component {
           </div>
         </div>
       </Layout>
-    )
+    );
   }
 }
 
-export default BlogPostTemplate
+ModuleTemplate.propTypes = {
+  location: PropTypes.any,
+};
+
+export default ModuleTemplate;
 
 export const pageQuery = graphql`
   query ModuleBySlug($slug: String!) {
@@ -52,4 +64,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

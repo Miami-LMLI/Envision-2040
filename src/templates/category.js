@@ -1,20 +1,28 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import get from 'lodash/get'
-import Img from 'gatsby-image'
-import Layout from '../components/layout'
-import ModulePreview from '../components/module-preview'
+import PropTypes from 'prop-types';
+import React from 'react';
+import {graphql} from 'gatsby';
+import get from 'lodash/get';
+import Img from 'gatsby-image';
+import Layout from '../components/layout';
+import ModulePreview from '../components/module-preview';
 
-import heroStyles from '../components/hero.module.css'
+import heroStyles from '../components/hero.module.css';
 
+/**
+ * [Insert comment here].
+ */
 class CategoryTemplate extends React.Component {
+  /**
+   * [Insert comment here].
+   * @return {*} [Insert comment here].
+   */
   render() {
-    const category = get(this.props, 'data.contentfulCategory')
-    const modules = get(this.props, 'data.allContentfulModule.edges')
+    const category = get(this.props, 'data.contentfulCategory');
+    const modules = get(this.props, 'data.allContentfulModule.edges');
 
     return (
       <Layout location={this.props.location}>
-        <div style={{ background: '#fff' }}>
+        <div style={{background: '#fff'}}>
           <div>
             <Img
               className={heroStyles.heroImage}
@@ -30,22 +38,26 @@ class CategoryTemplate extends React.Component {
               }}
             />
             <ul className="article-list">
-              {modules.map(({ node }) => {
+              {modules.map(({node}) => {
                 return (
                   <li key={node.slug}>
                     <ModulePreview module={node} />
                   </li>
-                )
+                );
               })}
             </ul>
           </div>
         </div>
       </Layout>
-    )
+    );
   }
 }
 
-export default CategoryTemplate
+CategoryTemplate.propTypes = {
+  location: PropTypes.any,
+};
+
+export default CategoryTemplate;
 
 export const pageQuery = graphql`
   query CategoryBySlug($slug: String!) {
@@ -80,4 +92,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
