@@ -53,7 +53,7 @@ exports.createPages = ({graphql, actions}) => {
           const modules = result.data.allContentfulModule.edges;
           modules.forEach((modules, index) => {
             createPage({
-              path: `/${modules.node.category.slug}/${modules.node.slug}/`,
+              path: `/modules/${modules.node.slug}/`,
               component: moduleTemplate,
               context: {
                 slug: modules.node.slug,
