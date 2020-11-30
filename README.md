@@ -88,7 +88,8 @@ It correctly bundles React in production mode and optimizes the build for the be
 <a name="license"/></a>
 ## License
 
-The underlying source code is licensed under the following [LICENSE](https://github.com/LMLI-Cohort-9/Envision-2040/blob/main/LICENSE.md)
+The underlying source code is licensed under the [LICENSE](https://github.com/LMLI-Cohort-9/Envision-2040/blob/main/LICENSE.md)
+
 [![LICENSE](https://img.shields.io/badge/LICENSE-grey.svg)](https://github.com/LMLI-Cohort-9/Envision-2040/blob/main/LICENSE.md)
 
 The graphics used are licensed under a [CC BY-NC 4.0 License](https://licensebuttons.net/l/by-nc/4.0/80x15.png).
