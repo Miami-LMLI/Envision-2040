@@ -12,7 +12,7 @@
   - [Core Tech Stack](#core-tech-stack)
   - [Prerequisites](#prerequisites)
   - [Setup](#setup)
-  - [Useful Commands](#useful)
+  - [Useful Commands](#useful-commands)
   - [License](#license)
 
 <a name="overview"/></a>
@@ -21,7 +21,7 @@ This repository is for the development of Lockheed Martin Leadership Institute's
 
 <a name="tech"/></a>
 ## Core Tech Stack
-- [ ] NodeJS (version >=10.13.0)
+- [ ] [NodeJS](https://nodejs.org/)
 - [ ] [React](https://reactjs.org/)
 - [ ] [Gatsby](https://www.gatsbyjs.com/)
 - [ ] [Contentful](https://www.contentful.com/)
@@ -70,13 +70,19 @@ npm run dev
 
 <a name="useful"/></a>
 ## Useful Commands
-```
-npm run build
-```
-Builds the app for production to the build folder.
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- `npm run start` or `npm run dev`
+  - Starts a development server accessible by default at http://localhost:8000. Gatsby will start a hot-reloading development environment.
 
-The build is minified and the filenames include the hashes.
+- `npm run lint`
+  - Runs ESLint on all Javascript and Typescript files. ESLint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code.The project should be in compliance with [Google's ESLint rules](https://github.com/google/eslint-config-google).
+
+- `npm run test`
+  - Runs all test cases. Currently there are no that have been written yet.
+
+- `npm run build`
+  - Builds the app for production to the build folder.
+It correctly bundles React in production mode and optimizes the build for the best performance. The build is minified and the filenames include the hashes.
+
 
 <a name="license"/></a>
 ## License
