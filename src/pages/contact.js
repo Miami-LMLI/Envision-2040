@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Col, Row } from 'react-bootstrap';
+import {Col, Row} from 'react-bootstrap';
 import Layout from '../components/layout';
 import {StaticQuery, graphql} from 'gatsby';
 
@@ -18,11 +18,11 @@ class Contact extends React.Component {
    * @return {*} [Insert comment here].
    */
   render() {
-    const { data } = this.props;
+    const {data} = this.props;
 
     return (
       <Layout location={this.props.location}>
-        <div style={{ background: '#fff' }}>
+        <div style={{background: '#fff'}}>
           <div className="wrapper">
             <h2 className="section-headline">Contact</h2>
             <Row>
@@ -91,7 +91,7 @@ class Contact extends React.Component {
                 <h3>Website</h3>
                 <a aria-label="Miami University"
                   href={data.site.siteMetadata.social.website}>
-                  <FontAwesomeIcon icon={faGlobe} /> Lockheed Martin Leadership Institute
+                  <FontAwesomeIcon icon={faGlobe} /> Main Website
                 </a>
               </Col>
               <Col></Col>
@@ -102,6 +102,24 @@ class Contact extends React.Component {
     );
   }
 }
+
+Contact.propTypes = {
+  data: PropTypes.shape({
+    site: PropTypes.shape({
+      siteMetadata: PropTypes.shape({
+        social: PropTypes.shape({
+          facebook: PropTypes.any,
+          instagram: PropTypes.any,
+          linkedin: PropTypes.any,
+          twitter: PropTypes.any,
+          website: PropTypes.any,
+          youtube: PropTypes.any,
+        }),
+      }),
+    }),
+  }),
+  location: PropTypes.any,
+};
 
 /**
  * [Insert comment here].

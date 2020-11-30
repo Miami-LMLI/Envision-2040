@@ -62,7 +62,8 @@ export const pageQuery = graphql`
         }
       }
     }
-    allContentfulModule(filter: {category: {slug: {eq: $slug}}}, sort: {fields: title}) {
+    allContentfulModule(filter: {category: {slug: {eq: $slug}}}, 
+                        sort: {fields: title}) {
     edges {
         node {
           title

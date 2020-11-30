@@ -22,12 +22,14 @@ class ModuleTemplate extends React.Component {
       <Layout location={this.props.location}>
         <div style={{background: '#fff'}}>
           <Img
-              className={styles.heroImage}
-              alt={module.title}
-              fluid={module.heroImage.fluid}
-            />
+            className={styles.heroImage}
+            alt={module.title}
+            fluid={module.heroImage.fluid}
+          />
           <div className="wrapper">
-            <h1 className="section-headline">{module.category.title} - {module.title}</h1>
+            <h1 className="section-headline">
+              {module.category.title} - {module.title}
+            </h1>
             <div
               dangerouslySetInnerHTML={{
                 __html: module.body.childMarkdownRemark.html,
