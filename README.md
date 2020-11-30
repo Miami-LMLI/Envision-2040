@@ -1,6 +1,7 @@
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/LMLI-Cohort-9/Envision-2040)
 
-![Website](https://img.shields.io/website?url=http%3A%2F%2Fenvision2040.digital%2F)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/405a4370-9b6d-4ced-85a9-b9d6a6c2cbaf/deploy-status)](https://app.netlify.com/sites/admiring-williams-97fa07/deploys)
+
 ![GitHub last commit](https://img.shields.io/github/last-commit/LMLI-Cohort-9/Envision-2040)
 [![GitHub issues](https://img.shields.io/github/issues/LMLI-Cohort-9/Envision-2040)](https://github.com/LMLI-Cohort-9/Envision-2040/issues)
 ![GitHub repo size](https://img.shields.io/github/repo-size/LMLI-Cohort-9/Envision-2040)
@@ -86,4 +87,10 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 <a name="license"/></a>
 ## License
-There is no license yet.
+
+The underlying source code is licensed under the following [LICENSE](https://github.com/LMLI-Cohort-9/Envision-2040/blob/main/LICENSE.md)
+[![LICENSE](https://img.shields.io/badge/LICENSE-grey.svg)](https://github.com/LMLI-Cohort-9/Envision-2040/blob/main/LICENSE.md)
+
+The graphics used are licensed under a [CC BY-NC 4.0 License](https://licensebuttons.net/l/by-nc/4.0/80x15.png).
+
+[![license: CC BY-NC 4.0](https://img.shields.io/badge/license-CC%20BY--NC%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by-nc/4.0/)
