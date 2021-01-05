@@ -5,6 +5,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import { faPodcast } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Carousel } from 'bootstrap';
 import { graphql } from 'gatsby';
 import get from 'lodash/get';
 import PropTypes from 'prop-types';
@@ -14,6 +15,7 @@ import CategoryPreview from '../components/category-preview';
 import Header from '../components/header';
 import Layout from '../components/layout';
 import styles from './index.module.css';
+import CategoryCarousol from '../components/category-carousol';
 
 /**
  * The class that represents the home page.
@@ -36,6 +38,7 @@ class Home extends React.Component {
         location={this.props.location}>
         <div className="content">
           <Header image={headerImg} applyGradient={true} />
+          
           <div className="wrapper">
             <h2 className="section-headline">
               Why wait for the world of tomorrow when it could be the world of
@@ -59,15 +62,7 @@ class Home extends React.Component {
             <h2 className="section-headline">
               Start Exploring
             </h2>
-            <Row>
-              {categories.map(({node}) => {
-                return (
-                  <Col key={node.slug} md={4}>
-                    <CategoryPreview category={node} />
-                  </Col>
-                );
-              })}
-            </Row>
+            <CategoryCarousol categories={categories}/>
           </div>
         </div>
 
@@ -157,9 +152,7 @@ export const pageQuery = graphql`
             }
           }
           description {
-            childMarkdownRemark {
-              html
-            }
+            description
           }
           sortOrder
         }
